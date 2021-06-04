@@ -21,6 +21,7 @@ from argparse import ArgumentParser
 
 import numpy as np
 import cv2
+import os
 
 
 # input image width/height of the yolov4 model, set by command-line argument
