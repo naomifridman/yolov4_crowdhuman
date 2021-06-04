@@ -46,7 +46,7 @@ echo "** Download dataset files"
 echo "** Download dataset files  CrowdHuman_train03.zip"
 get_file https://drive.google.com/uc?export=download&id=1-1noaH0ZfCDiHYw2oM1pCE6EaNOyTbOj #CrowdHuman_train03.zip
 echo "** Download dataset files  CrowdHuman_val.zip"
-get_file https://drive.google.com/uc?export=download&id=1ho6apKoazy1fM4JC5PYk-nH_efsb1nli CrowdHuman_val.zip
+get_file https://drive.google.com/uc?export=download&id=1ho6apKoazy1fM4JC5PYk-nH_efsb1nli #CrowdHuman_val.zip
 
 # test data is not needed...
 # get_file https://drive.google.com/uc?id=1tQG3E_RrRI4wIGskorLTmDiWHH2okVvk CrowdHuman_test.zip
