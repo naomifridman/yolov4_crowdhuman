@@ -139,7 +139,8 @@ def main():
     rm_txts(output_dir)
     process('test', 'raw/annotation_val.odgt', output_dir)
     process('train', 'raw/annotation_train.odgt', output_dir)
-
+    peint('creating ', 'crowdhuman-%s.data' % args.dim)
+      
     with open('crowdhuman-%s.data' % args.dim, 'w') as f:
         f.write("""classes = 2
 train   = data/crowdhuman-%s/train.txt
