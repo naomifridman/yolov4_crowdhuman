@@ -79,7 +79,10 @@ def process(set_='test', annotation_filename='raw/annotation_val.odgt',
             anno = json.loads(raw_anno)
             ID = anno['ID']  # e.g. '273271,c9db000d5146c15'
             
-            if ID is None: continue
+            jpg_path = output_dir / ('%s.jpg' % ID)
+            if not os.path.isfile(jpg_path): 
+               print(jpg_path, ' not found ')
+               continue
                
             print('Processing ID: %s' % ID)
             img_h, img_w, img_c = image_shape(ID, output_dir)
