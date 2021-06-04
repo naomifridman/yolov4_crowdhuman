@@ -78,6 +78,9 @@ def process(set_='test', annotation_filename='raw/annotation_val.odgt',
         for raw_anno in fanno.readlines():
             anno = json.loads(raw_anno)
             ID = anno['ID']  # e.g. '273271,c9db000d5146c15'
+            
+            if ID is None: continue
+               
             print('Processing ID: %s' % ID)
             img_h, img_w, img_c = image_shape(ID, output_dir)
             assert img_c == 3  # should be a BGR image
