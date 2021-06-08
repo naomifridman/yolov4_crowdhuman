@@ -103,7 +103,8 @@ def process(set_='test', annotation_filename='raw/annotation_val.odgt',
                         line = txt_line(1, obj['fbox'], img_w, img_h)
                         if line:
                             ftxt.write(line)
-            jpgs.append('data/%s/%s.jpg' % (output_dir, ID))
+             # full path is needed
+            jpgs.append('/content/yolov4_crowdhuman/data/%s/%s.jpg' % (output_dir, ID))
     # write the 'data/crowdhuman/train.txt' or 'data/crowdhuman/test.txt'
     set_path = output_dir / ('%s.txt' % set_)
     with open(set_path.as_posix(), 'w') as fset:
@@ -143,10 +144,10 @@ def main():
       
     with open('crowdhuman-%s.data' % args.dim, 'w') as f:
         f.write("""classes = 2
-train   = data/crowdhuman-%s/train.txt
-valid   = data/crowdhuman-%s/test.txt
-names   = data/crowdhuman.names
-backup  = backup/\n""" % (args.dim, args.dim))
+train   = /content/yolov4_crowdhuman/data/crowdhuman-%s/train.txt
+valid   = /content/yolov4_crowdhuman/data/crowdhuman-%s/test.txt
+names   = /content/yolov4_crowdhuman/data/crowdhuman.names
+backup  = /content/yolov4_crowdhuman/darknet/\n""" % (args.dim, args.dim))
 
     if DO_KMEANS:
         try:
